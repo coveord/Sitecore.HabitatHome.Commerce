@@ -1,0 +1,26 @@
+﻿---
+ID: "335f8cd0-42b3-464e-b204-692318217b17"
+Parent: "356ccf7c-8d0f-4e53-aca3-c809bfb82ccb"
+Template: "aa49c002-2af9-43be-9d06-96510384d9ba"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Position Providers
+DB: master
+BranchID: "a16527d0-f782-48a9-beda-fc49de2c0a57"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: 
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{1BE95065-B976-4F6B-912F-05A54AE808E6}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181001T205300Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\coveoadmin

@@ -1,0 +1,22 @@
+﻿---
+ID: "2a0a1539-8c4c-4b59-ad23-c102e1b85669"
+Parent: "021f5d40-1ff8-4074-9a16-61b6d514748f"
+Template: "2ad23d55-aecd-43dd-ae0d-72d2ebcba60f"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearch/Data/HTML Code 1
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "24cce27c-05db-4473-a1ed-e69b1725ff1c"
+      Hint: HtmlCode
+      Value: |
+        <div class="search-page-menu-spacer"> </div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T013345Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

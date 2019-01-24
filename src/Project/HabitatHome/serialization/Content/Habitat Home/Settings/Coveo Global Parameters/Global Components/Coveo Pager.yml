@@ -1,0 +1,22 @@
+﻿---
+ID: "69653941-f406-4a60-9539-d694558c6f69"
+Parent: "6bcda30c-1d61-4c8e-bea1-18dce237c5bb"
+Template: "870280b9-671d-4869-87b9-93e5c90559bf"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Components/Coveo Pager
+DB: master
+SharedFields:
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo38692c3d
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181002T154434Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

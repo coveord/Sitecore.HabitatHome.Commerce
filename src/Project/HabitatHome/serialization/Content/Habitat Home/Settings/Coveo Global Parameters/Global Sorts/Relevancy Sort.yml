@@ -1,0 +1,22 @@
+﻿---
+ID: "57b70853-d672-4e55-83c6-51591bfc548c"
+Parent: "d2ea4dd0-8185-4780-b2d8-d79888481f42"
+Template: "4c5dcc8d-b30a-4c94-9b07-a7462d2582ee"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Sorts/Relevancy Sort
+DB: master
+SharedFields:
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo87702d95
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181002T155505Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

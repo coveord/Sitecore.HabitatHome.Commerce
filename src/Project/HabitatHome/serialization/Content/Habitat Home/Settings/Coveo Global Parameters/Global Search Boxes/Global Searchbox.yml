@@ -1,0 +1,22 @@
+﻿---
+ID: "f39a47db-d1fa-4866-920c-8a06b507ff55"
+Parent: "d4723e8d-241f-4b47-9025-435b0bc0ac5e"
+Template: "6d0fe651-03c9-43c6-8831-00a4cde05ae7"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Search Boxes/Global Searchbox
+DB: master
+SharedFields:
+- ID: "e29c2085-1bc7-40d0-a02a-c554595a6a94"
+  Hint: SearchPageUri
+  Value: "{30496055-0520-472F-9CFB-D5117ADAEB0C}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181001T205442Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\coveoadmin

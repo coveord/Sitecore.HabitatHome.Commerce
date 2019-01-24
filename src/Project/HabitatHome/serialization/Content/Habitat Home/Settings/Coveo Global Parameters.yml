@@ -1,0 +1,44 @@
+﻿---
+ID: "356ccf7c-8d0f-4e53-aca3-c809bfb82ccb"
+Parent: "987434ac-cb20-44e1-bb93-ab6eeb479092"
+Template: "4834979e-74d4-40a2-915e-e3678727664b"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters
+DB: master
+BranchID: "a16527d0-f782-48a9-beda-fc49de2c0a57"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: 
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {B4746F6C-4FDC-47EA-BC9B-E2E8BF7D4760}
+    {A6BAC6DA-D55E-40E2-9C6C-422C9965E55D}
+    {A0D8D59E-5A79-45FF-811B-9697B4E3397B}
+    {AA49C002-2AF9-43BE-9D06-96510384D9BA}
+    {4F1765B7-F63A-4724-9575-12484AB0934C}
+    {86C26F99-EAFD-441B-A2D7-D46AC1E742DF}
+    {E462B8F8-407C-4A98-A25E-CBE5FC6C799F}
+    {7CACB9B2-8144-4BCA-B79E-5A0A22583E9E}
+    {011C7C50-34C6-402E-8306-DDC77D4E5F71}
+    {F3E3A14F-5558-4416-B359-1863A0294E46}
+    {A7AD7B3F-3CA6-4507-8FAE-2F7BEAA3E6CE}
+    {ED756749-4D69-4541-8931-0549623FABE9}
+    {F139D926-82C5-4A9E-946A-BB618F8DDDD5}
+    {562B92F1-5746-40E9-B425-2B78D8D67F36}
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{0CFA210E-4020-4A3F-B054-7D3643B3DCD7}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181001T205259Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\coveoadmin

@@ -1,0 +1,70 @@
+﻿---
+ID: "29f0233b-f4e0-4860-8388-d17c9ebb129e"
+Parent: "a7fc4a91-c156-408f-8409-f851b8fbcdce"
+Template: "ceea573d-0220-49e6-8f4e-c9730186bf4a"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Search Interfaces/Search Interface
+DB: master
+SharedFields:
+- ID: "4eaa4851-dde1-47a5-a13d-b433533ff78a"
+  Hint: FilterExpressionRules
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule
+        uid="{22FCACC3-D102-47C0-81C5-135837C4E0FE}">
+        <conditions>
+          <and
+            uid="CE90BD688E254D64BBB940D335B88477">
+            <condition
+              id="{3BE9D05A-3D10-4137-ADBB-5A5F1B2F05F2}"
+              uid="7D3EF5508DD14DE390B6279E0D062290"
+              templateid="{225F8638-2611-4841-9B89-19A5440A1DA1}" />
+            <condition
+              id="{36831DCB-0532-4E84-879C-25E09B094256}"
+              uid="6AB470DB09C54F61B24BAC122D3AED6A"
+              fieldname="computedcategories"
+              operatorid="{5230215E-24B2-4E1C-93DF-91A56B459B4D}"
+              value="Featured Products" />
+          </and>
+        </conditions>
+      </rule>
+    </ruleset>
+- ID: "55338b23-d40f-42c5-8937-fac155dacbfe"
+  Hint: BoostExpressionRules
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule
+        uid="{2BDFFB08-7A4A-419A-A555-425F75C56F0A}">
+        <conditions>
+          <condition
+            id="{3BE9D05A-3D10-4137-ADBB-5A5F1B2F05F2}"
+            uid="AF933EB67A804057802DAF69FB0DE9FB"
+            templateid="{225F8638-2611-4841-9B89-19A5440A1DA1}" />
+        </conditions>
+        <actions>
+          <action
+            id="{FB2A22A4-9E43-47EC-874F-7E15F7CF6526}"
+            uid="E3CE6AD71DFF498E8C12D6671ABDC740"
+            weight="20" />
+        </actions>
+      </rule>
+    </ruleset>
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo03e10c6f
+- ID: "e561c43b-524a-4f34-8015-ea917f569b65"
+  Hint: ExcerptLength
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181001T205930Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\coveoadmin

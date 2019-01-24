@@ -1,0 +1,18 @@
+﻿---
+ID: "636537f2-048a-48be-92fc-c729d54a16c5"
+Parent: "8ccc6e0f-d6da-4623-a272-67b2d05e5ecc"
+Template: "80700b1c-a8ce-400c-8d8f-dfda9b4570ba"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Sections/Breadcrumbs Section
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T200426Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

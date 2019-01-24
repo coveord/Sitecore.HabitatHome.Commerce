@@ -1,0 +1,18 @@
+﻿---
+ID: "9a85cbee-ea2a-46a3-82e5-9159bb08478e"
+Parent: "6bcda30c-1d61-4c8e-bea1-18dce237c5bb"
+Template: "3fde3cab-b2e7-47fd-8493-d6c5b3325b43"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Components/Did You Mean
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181002T234531Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

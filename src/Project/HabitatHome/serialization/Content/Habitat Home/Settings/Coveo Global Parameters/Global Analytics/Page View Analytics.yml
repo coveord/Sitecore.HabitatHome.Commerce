@@ -1,0 +1,18 @@
+﻿---
+ID: "6e8d6fc5-c99a-4f41-885f-7b706a6f9e03"
+Parent: "c8903b08-88dd-49d4-8a68-f401ae7e0d46"
+Template: "24011776-43a0-41fb-92ef-068e42cb2fa3"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Analytics/Page View Analytics
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T131511Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

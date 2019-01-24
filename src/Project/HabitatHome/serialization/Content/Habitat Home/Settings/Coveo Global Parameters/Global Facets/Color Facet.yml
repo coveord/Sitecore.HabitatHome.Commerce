@@ -1,0 +1,31 @@
+﻿---
+ID: "687b1be2-16a9-48c6-a857-25ca8f9f4de7"
+Parent: "ed1f6b4e-ac37-4b4a-bcbc-49363e5a352a"
+Template: "dc181cdf-76ab-45d5-9349-443af40bd6e2"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Facets/Color Facet
+DB: master
+SharedFields:
+- ID: "21f86a99-b823-4cbb-8183-dea9d72855ca"
+  Hint: FacetField
+  Value: variantscolor
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: facetColor
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T012442Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
+    - ID: "976807a8-e981-4127-9f1f-f12188a5550d"
+      Hint: FacetTitle
+      Value: Available Colors
+    - ID: "ba7a0fc4-8dee-4c05-9e80-a7e6b8cf89b7"
+      Hint: FacetName
+      Value: Color

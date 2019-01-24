@@ -1,0 +1,28 @@
+﻿---
+ID: "cb67a4ed-6fbf-48db-b9fd-1ab79ffb6ec7"
+Parent: "7e428803-a8f4-496c-b5fe-9452adc0fa82"
+Template: "75a4ffc2-2607-41a2-ab3c-992d8ae98dde"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Tabs/Everything Tab
+DB: master
+SharedFields:
+- ID: "5ba24bd7-3a4a-4c6d-a39d-132f06b8cb25"
+  Hint: Layout
+  Value: "{C8AF1B72-A671-4761-87E4-6308F1299916}"
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: tabEverything
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T001049Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
+    - ID: "646692a3-52a9-4dfa-bc75-305d91f6f05d"
+      Hint: TabCaption
+      Value: Everything

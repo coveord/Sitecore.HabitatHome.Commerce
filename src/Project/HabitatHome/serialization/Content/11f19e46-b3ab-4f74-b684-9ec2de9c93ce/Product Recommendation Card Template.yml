@@ -1,0 +1,28 @@
+﻿---
+ID: "ac186633-a640-43c5-9ac1-aa1fa61444de"
+Parent: "11f19e46-b3ab-4f74-b684-9ec2de9c93ce"
+Template: "2384d4b8-396e-4d6d-861c-9fc171659644"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Result Templates/Product Recommendation Card Template
+DB: master
+SharedFields:
+- ID: "5a29f470-49e9-4e25-9746-c21b0f917909"
+  Hint: ResultLayout
+  Value: Card
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo0987d433
+- ID: "f063331b-6d08-43ae-b32d-b680d2610c95"
+  Hint: TemplateName
+  Value: productrecommendationcard
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181004T212728Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
