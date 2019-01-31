@@ -115,7 +115,11 @@ gulp.task("Copy-Sitecore-Lib", function (callback) {
 
     fs.statSync(config.sitecoreLibraries);
     const commerce = config.sitecoreLibraries + "/**/Sitecore.Commerce.XA.*";
-    return gulp.src(commerce).pipe(gulp.dest("./lib/Modules/Commerce"));
+    gulp.src(commerce).pipe(gulp.dest("./lib/Modules/Commerce"));
+
+    console.log("Copying Coveo for Sitecore Libraries");
+    const coveo = config.sitecoreLibraries + "/**/Coveo.*.dll";
+    return gulp.src(coveo).pipe(gulp.dest("./lib/Modules/Coveo"));
 });
 
 
