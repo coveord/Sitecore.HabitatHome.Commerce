@@ -158,15 +158,13 @@ Languages:
               uid="{86A32316-BDAD-407D-905D-204C5EA9DA84}"
               p:before="*"
               s:ds="{6BB882E4-AAF9-4DBA-94A0-9CC7872051D4}"
-              s:id="{91D97B28-E824-40B5-941F-F4D1E4EB97E1}"
-              s:par=""
+              s:id="{2CCADC85-EE26-4949-8C9F-7AC5849C8B8E}"
               s:ph="/header/container-1/column-2-2/container-3" />
             <r
               uid="{44A203E5-B36A-4AC5-BCAB-83FF056E1FFC}"
               p:after="r[@uid='{86A32316-BDAD-407D-905D-204C5EA9DA84}']"
               s:ds="{F39A47DB-D1FA-4866-920C-8A06B507FF55}"
               s:id="{30CEE9DC-3978-4D7E-B3D2-E2A470372F6F}"
-              s:par=""
               s:ph="/header/container-1/column-2-2/container-3/coveouiexternalcomponentssxa-95039209">
               <rls>
                 <ruleset>
@@ -207,7 +205,6 @@ Languages:
               p:after="r[@uid='{33788092-8612-4166-AE3F-8E3755A21AD6}']"
               s:ds="{CC19AF66-FC6F-4E21-9FFD-F5184F44A63A}"
               s:id="{F7874617-8F41-4012-A2A4-FB9E54C3DCF9}"
-              s:par=""
               s:ph="/header/container-1/column-2-2/container-3" />
             <r
               uid="{8849B7D1-633F-4864-82AD-F0A67E0E9951}"
@@ -220,6 +217,10 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20171031T165939Z
+    - ID: "4c2f221f-9426-45ed-9eeb-c79bb3169565"
+      Hint: StickyNotes
+      Value: |
+        {"items":[]}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
