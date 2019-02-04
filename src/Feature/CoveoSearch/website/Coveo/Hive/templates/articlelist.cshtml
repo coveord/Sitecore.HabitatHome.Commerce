@@ -1,0 +1,33 @@
+﻿<div class="coveo-result-frame coveoforsitecore-template">
+    <div class="coveo-result-row">
+        <div class="coveo-result-cell coveo-quick-view-container">
+            <% if (raw.navigationimageurl) { %>
+                <img src="<%- raw.navigationimageurl %>" alt="<%- raw.navigationimagealt %>" />
+            <% } else { %>
+                <span class="CoveoIcon"></span>
+            <% } %>
+            <% if (hasHtmlVersion) { %>
+                <div class="CoveoQuickview" data-fixed="true"></div>
+            <% } %>
+        </div>
+        <div class="coveo-result-cell coveoforsitecore-information-section">
+            <div class="coveo-result-row">
+                <div class="coveo-result-cell">
+                    <div class="coveo-title">
+                        <a class="CoveoResultLink"><%= title ? highlight(title, titleHighlights) : clickUri %></a>
+                    </div>
+                    <div class="author-name">By <%- raw.authorname %></div>
+                </div>
+                <div class="coveo-result-cell coveoforsitecore-time-cell">
+                    <span class="CoveoFieldValue" data-field="<%= coveoFieldName('@@__smallcreateddate') %>" data-helper="date"></span>
+                </div>
+            </div>
+            <div class="coveo-result-row">
+                <div class="coveo-result-cell">
+                    <span class="CoveoExcerpt"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

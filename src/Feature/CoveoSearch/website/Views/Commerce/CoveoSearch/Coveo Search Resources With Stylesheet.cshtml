@@ -1,0 +1,56 @@
+@using Coveo.UI.Components
+@using Coveo.UI.Components.Extensions
+@using Coveo.UI.Core.ErrorReports
+@using Coveo.UI.Components.Sxa.Extensions
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@model Coveo.UI.Components.Sxa.Areas.CoveoHiveSxa.Models.Resources.SearchResourcesModel
+<div @Html.Sxa().Component("coveo-searchresources", Model.Attributes)>
+
+<link rel="stylesheet" href="@(Model.Properties.CoveoSearchUiPath)/css/CoveoFullSearch.css" />
+<link rel="stylesheet" href="@(Model.Properties.CoveoForSitecoreSearchUiPath)/css/CoveoForSitecore.css" />
+<link rel="stylesheet" href="/Styles/Commerce/Feature/CoveoSearch/habitathome.feature.coveosearch.css" />
+<script class="coveo-script" type="text/javascript" src='@(Html.Coveo().IsEditingInPageEditor() ? Model.Properties.CoveoSearchUiPath + "/js/CoveoJsSearch.Lazy.js" : Model.Properties.CoveoSearchUiPath + "/js/CoveoJsSearch.Lazy.min.js")'></script>
+<script class="coveo-for-sitecore-script" type="text/javascript" src='@(Html.Coveo().IsEditingInPageEditor() ? Model.Properties.CoveoForSitecoreSearchUiPath + "/js/CoveoForSitecore.Lazy.js" : Model.Properties.CoveoForSitecoreSearchUiPath + "/js/CoveoForSitecore.Lazy.min.js")'></script>
+<script type="text/javascript" src="@(Model.Properties.CultureFile)"></script>
+
+<div>
+    @if (Html.Coveo().IsEditingInPageEditor()) {
+        <link rel="stylesheet" href="@(Model.Properties.CoveoForSitecoreSearchUiPath)/css/CoveoForSitecoreExperienceEditor.css" />
+        @Html.Partial(Partials.EDIT_TITLE, Html.Coveo().GetViewName())
+        @Html.Partial(Partials.DEBUG_INFORMATION, Model)
+    }
+
+    @{
+        IErrorReport errorReport = Model.ValidateModel();
+    }
+    @Html.Coveo().RenderErrorSummary(errorReport)
+    @Html.Partial(Partials.COMPONENT_ERROR, errorReport)
+    @if (Model.IsConfigured) {
+
+    <!-- Resources -->
+    <div id="@Model.Id"
+         class="CoveoForSitecoreContext"
+        @foreach(var property in @Model.RawProperties) {
+            @:data-@(property.Key)='@(property.Value)'
+        }>
+    </div>
+
+    <script type="text/javascript">
+        var endpointConfiguration = {
+            itemUri: "@Model.Properties.ItemUri",
+            siteName: "@Model.Properties.SiteName",
+            restEndpointUri: "@Model.Properties.RestEndpointUri"
+        };
+        if (typeof (CoveoForSitecore) !== "undefined") {
+            CoveoForSitecore.SearchEndpoint.configureSitecoreEndpoint(endpointConfiguration);
+            CoveoForSitecore.version = "@Model.Properties.CoveoForSitecoreVersion";
+            var context = document.getElementById("@Model.Id");
+            if (!!context) {
+                CoveoForSitecore.Context.configureContext(context);
+            }
+        }
+    </script>
+    }
+</div>
+</div>

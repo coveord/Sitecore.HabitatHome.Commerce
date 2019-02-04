@@ -1,0 +1,48 @@
+﻿---
+ID: "2ccadc85-ee26-4949-8c9f-7ac5849c8b8e"
+Parent: "1afdabc7-1dec-4455-beef-9ce0b8db1db2"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
+Path: /sitecore/layout/Renderings/Feature/Habitat Sites/CoveoSearch/Coveo Search Resources With Stylesheet
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Coveo Hive/32x32/coveo_search_resources.png
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Coveo Hive/Resources/Coveo Search Resources
+- ID: "a2f5d9df-8cba-4a1d-99eb-51acb94cb057"
+  Hint: Page Editor Buttons
+  Type: Treelist
+  Value: "{1A5F6292-19C1-437F-A079-BDF6D04063F6}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "query:fast:/sitecore/content//*[@@templateid='{4F1765B7-F63A-4724-9575-12484AB0934C}']"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: 
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: Index
+- ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
+  Hint: Compatible Renderings
+  Type: Treelist
+  Value: "{91D97B28-E824-40B5-941F-F4D1E4EB97E1}"
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
+  Hint: Controller
+  Value: Sitecore.HabitatHome.Feature.CoveoSearch.Controllers.SearchResourcesWithStylesheetController, Sitecore.HabitatHome.Feature.CoveoSearch
+- ID: "fc5c3451-dfde-4778-9901-5d0b1da1e212"
+  Hint: Area
+  Value: 
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Coveo Search Resources With Stylesheet
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180119T213807Z

@@ -132,6 +132,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoveoIndexing", "CoveoIndex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Foundation.CoveoIndexing.Website", "src\Foundation\CoveoIndexing\website\Sitecore.HabitatHome.Foundation.CoveoIndexing.Website.csproj", "{F2531D3A-5F8E-4ACB-A364-2D76011E87C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoveoSearch", "CoveoSearch", "{A13E1037-50C9-43FF-B2F5-DC12015AEC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Feature.CoveoSearch.Website", "src\Feature\CoveoSearch\website\Sitecore.HabitatHome.Feature.CoveoSearch.Website.csproj", "{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -244,6 +248,10 @@ Global
 		{F2531D3A-5F8E-4ACB-A364-2D76011E87C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2531D3A-5F8E-4ACB-A364-2D76011E87C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2531D3A-5F8E-4ACB-A364-2D76011E87C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -304,6 +312,8 @@ Global
 		{66A9D806-7F92-43B2-89BE-5DDC47233266} = {D1D8EE7B-6BDB-4906-8073-CDAFC002840B}
 		{859CEED8-65A9-454A-80F2-9C24EDFCB4E6} = {1B6FFBEA-35BD-4381-A2BE-4FA54E3940E1}
 		{F2531D3A-5F8E-4ACB-A364-2D76011E87C1} = {859CEED8-65A9-454A-80F2-9C24EDFCB4E6}
+		{A13E1037-50C9-43FF-B2F5-DC12015AEC97} = {05829E0F-331A-44AF-BEB8-3AD54EE35694}
+		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7} = {A13E1037-50C9-43FF-B2F5-DC12015AEC97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {092E4BB9-63E2-476F-91D9-389412140FC4}
