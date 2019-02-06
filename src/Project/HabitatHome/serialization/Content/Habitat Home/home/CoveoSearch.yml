@@ -155,15 +155,8 @@ Languages:
               s:par=""
               s:ph="/main/sxa-content-container/container-1/container-2/column-2-4/coveouicontentsxa-1545348860" />
             <r
-              uid="{3A739EE5-C198-431F-A7B5-DBCE06519344}"
-              p:after="r[@uid='{EE740112-D364-4D50-8346-CF5302BFF32D}']"
-              s:ds="{040F0162-65F5-47AC-A516-360D7BD87511}"
-              s:id="{4E4728F3-A9A4-47CB-9D2C-780458361E13}"
-              s:par=""
-              s:ph="/main/sxa-content-container/container-1/container-2/column-1-4/coveouiexternalcomponentssxa-1178821920" />
-            <r
               uid="{74BF7F1C-F668-4C1F-AA88-9C17D8D1276A}"
-              p:after="r[@uid='{3A739EE5-C198-431F-A7B5-DBCE06519344}']"
+              p:after="r[@uid='{EE740112-D364-4D50-8346-CF5302BFF32D}']"
               s:ds="{28002AE6-6686-47FF-8AF5-BF0CCAF04685}"
               s:id="{77BD0D35-0D05-45DF-B8CE-B6BC2AEA3FF6}"
               s:par=""

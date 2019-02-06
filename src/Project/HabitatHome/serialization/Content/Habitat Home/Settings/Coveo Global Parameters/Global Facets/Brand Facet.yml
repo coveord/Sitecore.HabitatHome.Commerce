@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "21f86a99-b823-4cbb-8183-dea9d72855ca"
   Hint: FacetField
-  Value: Brand
+  Value: computedbrand
 - ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
   Hint: ItemId
   Value: coveode749f18
