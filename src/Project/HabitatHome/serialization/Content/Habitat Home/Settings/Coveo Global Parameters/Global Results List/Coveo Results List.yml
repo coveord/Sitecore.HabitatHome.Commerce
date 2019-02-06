@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "c1469571-d958-4250-8ed0-3f96f3f17f30"
   Hint: ResultsLayout
-  Value: "{C8AF1B72-A671-4761-87E4-6308F1299916}"
+  Value: "{88113086-3A1F-4FA9-8A66-8F37CA8DB5E2}"
 - ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
   Hint: ItemId
   Value: coveo02a4482a
