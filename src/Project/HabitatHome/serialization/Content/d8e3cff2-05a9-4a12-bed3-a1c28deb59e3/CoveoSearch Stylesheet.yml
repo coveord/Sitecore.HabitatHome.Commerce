@@ -1,0 +1,22 @@
+﻿---
+ID: "a315b7f5-7be5-4499-af7c-9ec1de5b3c8e"
+Parent: "d8e3cff2-05a9-4a12-bed3-a1c28deb59e3"
+Template: "2ad23d55-aecd-43dd-ae0d-72d2ebcba60f"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Resources/CoveoSearch Stylesheet
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "24cce27c-05db-4473-a1ed-e69b1725ff1c"
+      Hint: HtmlCode
+      Value: |
+        <link rel="stylesheet" href="/Styles/Commerce/Feature/CoveoSearch/habitathome.feature.coveosearch.css" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190206T012043Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -91,7 +91,6 @@
     <Content Include="Coveo\Hive\templates\productrecommendationcard.cshtml" />
     <Content Include="Coveo\Hive\templates\relatedarticlelist.cshtml" />
     <Content Include="Styles\Commerce\Feature\CoveoSearch\habitathome.feature.coveosearch.css" />
-    <Content Include="Views\Commerce\CoveoSearch\Coveo Search Resources With Stylesheet.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -103,7 +102,6 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\SearchResourcesWithStylesheetController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

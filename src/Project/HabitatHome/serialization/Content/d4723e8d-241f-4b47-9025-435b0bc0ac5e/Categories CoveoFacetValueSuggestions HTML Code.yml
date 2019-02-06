@@ -1,0 +1,22 @@
+﻿---
+ID: "054a30db-0e65-4fc9-bf59-66c954465ba7"
+Parent: "d4723e8d-241f-4b47-9025-435b0bc0ac5e"
+Template: "2ad23d55-aecd-43dd-ae0d-72d2ebcba60f"
+Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Search Boxes/Categories CoveoFacetValueSuggestions HTML Code
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "24cce27c-05db-4473-a1ed-e69b1725ff1c"
+      Hint: HtmlCode
+      Value: |
+        <div class="CoveoFacetValueSuggestions" data-field="@computedcategories"></div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190205T154602Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
