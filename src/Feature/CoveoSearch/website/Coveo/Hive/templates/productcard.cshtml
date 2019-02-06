@@ -1,25 +1,25 @@
 ﻿<div class="coveo-result-frame coveoforsitecore-template">
-    <a class="CoveoResultLink" href="<%- clickUri %>">
-        <div class="coveo-result-row">
+    <div class="coveo-result-row">
+        <a class="CoveoResultLink">
             <% if (raw.productimages) { %>
                 <img src="<%- raw.productimages[0] %>" alt="<%- raw.navigationimagealt %>" />
             <% } else { %>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy67qKEMJNh_JsKfsEY3BTVbfSzvXi9F0QzwgKxC9fxTzYBEIb" alt="No product image available" />
             <% } %>
-        </div>
-        <div class="coveo-result-row">
-            <div class="coveo-result-cell">
-                <div class="brand-card"><%- raw.computedbrand %></div>
-                <div class="coveo-title">
-                    <%= title ? highlight(title, titleHighlights) : clickUri %>
-                </div>
+        </a>
+    </div>
+    <div class="coveo-result-row">
+        <div class="coveo-result-cell">
+            <div class="brand-card"><%- raw.computedbrand %></div>
+            <div class="coveo-title">
+                <a class="CoveoResultLink"><%= title ? highlight(title, titleHighlights) : clickUri %></a>
             </div>
         </div>
-        <div class="coveo-result-row">
-            <div class="coveo-result-cell">
-                <span class="CoveoFieldValue price-card" data-field="<%= coveoFieldName('@@productlistprice') %>" data-helper="currency"></span>
-                <span class="CoveoExcerpt"></span>
-            </div>
+    </div>
+    <div class="coveo-result-row">
+        <div class="coveo-result-cell">
+            <span class="CoveoFieldValue price-card" data-field="<%= coveoFieldName('@@productlistprice') %>" data-helper="currency"></span>
+            <span class="CoveoExcerpt"></span>
         </div>
-    </a>
+    </div>
 </div>

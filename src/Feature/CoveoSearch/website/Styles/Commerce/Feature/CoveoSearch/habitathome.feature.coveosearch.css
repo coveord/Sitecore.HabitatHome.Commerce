@@ -318,7 +318,6 @@
 
 .coveo-card-layout.CoveoResult:hover .coveo-result-frame, .coveo-card-layout.CoveoResult.coveo-result-frame:hover {
 	box-shadow: 1px 3px 10px rgb(220,220,220);
-	cursor: pointer;
 }
 
 .coveo-result-cell img,
@@ -389,14 +388,6 @@
 	margin: 0;
 	padding: 0;
 	max-width: 33%;
-}
-
-.coveo-card-layout.CoveoResult .CoveoResultLink:hover {
-	text-decoration: none;
-}
-
-.coveo-card-layout.CoveoResult .CoveoResultLink:hover .coveo-title {
-	text-decoration: underline;
 }
 
 .CoveoExcerpt {

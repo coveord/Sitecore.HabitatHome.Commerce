@@ -1,11 +1,13 @@
 ﻿<div class="coveo-result-frame coveoforsitecore-template">
     <div class="coveo-result-row">
         <div class="coveo-result-cell coveo-quick-view-container">
-            <% if (raw.productimages) { %>
-                <img src="<%- raw.productimages[0] %>" alt="<%- raw.navigationimagealt %>" />
-            <% } else { %>
-                <span class="CoveoIcon"></span>
-            <% } %>
+            <a class="CoveoResultLink">
+                <% if (raw.productimages) { %>
+                    <img src="<%- raw.productimages[0] %>" alt="<%- raw.navigationimagealt %>" />
+                <% } else { %>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy67qKEMJNh_JsKfsEY3BTVbfSzvXi9F0QzwgKxC9fxTzYBEIb" alt="No product image available" />
+                <% } %>
+            </a>
             <% if (hasHtmlVersion) { %>
                 <div class="CoveoQuickview" data-fixed="true"></div>
             <% } %>
@@ -18,6 +20,15 @@
                     </div>
                     <h4><%- raw.computedbrand %></h4>
                     <h4><%- raw.computedcategories %></h4>
+                </div>
+            </div>
+            <div class="coveo-result-row">
+                <div class="coveo-result-cell">
+                    <span class="CoveoFieldValue price-card" data-field="<%= coveoFieldName('@@productlistprice') %>" data-helper="currency" style="position:static; display:inline-block;"></span>
+                </div>
+            </div>
+            <div class="coveo-result-row">
+                <div class="coveo-result-cell">
                     <span class="CoveoExcerpt"></span>
                 </div>
             </div>
