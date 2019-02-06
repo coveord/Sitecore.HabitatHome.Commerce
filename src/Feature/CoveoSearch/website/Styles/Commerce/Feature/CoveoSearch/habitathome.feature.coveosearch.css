@@ -288,9 +288,12 @@
 
 /* tabs */
 
+.coveo-tab {
+    display: none;
+}
+
 .CoveoTab {
 	font-size: 18pt;
-	display: none;
 }
 
 .CoveoTab.coveo-selected {
