@@ -1,0 +1,20 @@
+# Extension name: Replace Sitecore Commerce Products Clickable URI
+# Description: Computes a new URI that works in Sitecore Commerce
+
+template = document.get_meta_data_value('z95xtemplatename')[0]
+log(template)
+
+if (template == "Commerce Product"):
+  url = "https://habitathome.coveodemo.com/shop/"
+  catalog = "=habitat_master-"
+  equalSign = "="
+  dash = "/"
+  category = document.get_meta_data_value('computedcategories')[-1]
+  productId = document.get_meta_data_value('productid')[0]
+  title = document.get_meta_data_value('computeddisplayname')[0]
+  title = title.replace(".", "")
+  title = title.replace(" ", "")
+  title = title.replace("\"", "")
+  newUrl = url + category + catalog + category.lower() + dash + title + equalSign + productId
+  log(newUrl)
+  document.add_meta_data({"clickableuri":newUrl})

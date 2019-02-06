@@ -1,0 +1,13 @@
+# Extension name: Replace Sitecore Commerce Products Body with a Field
+# Description: Using computeddescription to fill the item's body
+# Requires:
+# - Body text
+
+template = document.get_meta_data_value('z95xtemplatename')[0]
+
+if (template == "Commerce Product"):
+  description = document.get_meta_data_value('computeddescription')[0]
+  new_body = document.DataStream('body_text')
+  new_body.write(description)
+  document.add_data_stream(new_body)
+  log("Body replaced with product description.")
