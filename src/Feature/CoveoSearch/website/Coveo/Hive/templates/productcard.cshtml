@@ -1,5 +1,4 @@
 ﻿<div class="coveo-result-frame coveoforsitecore-template">
-    PRODUCT
     <a class="CoveoResultLink" href="<%- clickUri %>">
         <div class="coveo-result-row">
             <% if (raw.productimages) { %>
@@ -10,7 +9,7 @@
         </div>
         <div class="coveo-result-row">
             <div class="coveo-result-cell">
-                <div class="brand-card"><%- raw.brand %></div>
+                <div class="brand-card"><%- raw.computedbrand %></div>
                 <div class="coveo-title">
                     <%= title ? highlight(title, titleHighlights) : clickUri %>
                 </div>
