@@ -10,7 +10,7 @@ SharedFields:
   Value: recommendations
 - ID: "c43dcef1-3f1f-4886-be2c-eb4644c8a1c4"
   Hint: ResultsPerPage
-  Value: 4
+  Value: 3
 - ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
   Hint: ItemId
   Value: coveo35a7c37d

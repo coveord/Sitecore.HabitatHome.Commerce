@@ -1,10 +1,12 @@
 <div class="coveo-result-frame coveoforsitecore-template">
     <div class="coveo-result-row">
-        <% if (raw.productimages) { %>
-            <img src="<%- raw.productimages[0] %>" alt="<%- raw.navigationimagealt %>" />
-        <% } else { %>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy67qKEMJNh_JsKfsEY3BTVbfSzvXi9F0QzwgKxC9fxTzYBEIb" alt="No product image available" />
-        <% } %>
+        <a class="CoveoResultLink">
+            <% if (raw.productimages) { %>
+                <img src="<%- raw.productimages[0] %>" alt="<%- raw.navigationimagealt %>" />
+            <% } else { %>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy67qKEMJNh_JsKfsEY3BTVbfSzvXi9F0QzwgKxC9fxTzYBEIb" alt="No product image available" />
+            <% } %>
+        </a>
     </div>
     <div class="coveo-result-row">
         <div class="coveo-result-cell">

@@ -526,8 +526,10 @@
 
 /* Product Recommendations */
 
-.component.coveo-recommendations .CoveoRecommendation {
-	border: none;
+.component.coveo-recommendations,
+.component.coveo-recommendations .CoveoRecommendation,
+.coveo-recommendation-body .CoveoResultList .CoveoResult {
+    border: none;
 }
 
 .component.coveo-recommendations .coveo-recommendation-title {
@@ -538,8 +540,4 @@
 
 .component.coveo-recommendations .coveo-recommendation-header {
 	background-color: white;
-}
-
-.component.coveo-recommendations {
-	border: none;
 }
