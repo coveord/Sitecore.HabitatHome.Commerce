@@ -193,8 +193,14 @@ Languages:
               s:par=""
               s:ph="/main/sxa-content-container/container-1/column-2-5/coveouiresultssxa-867402121" />
             <r
-              uid="{973471AF-74B7-4914-A551-6CE3D22BF998}"
+              uid="{336A7443-9714-42E6-97F0-BF79BDE78B47}"
               p:after="r[@uid='{FD768566-3638-4C86-99D9-6CB5B7F6BF8A}']"
+              s:id="{E677B70F-C6E8-4ED7-9F39-CF551E5E54FA}"
+              s:par="GridParameters=%7B113BEF7C-97E6-46CA-8CF3-916F7FAA8DE2%7D"
+              s:ph="/main/sxa-content-container/container-1/column-2-5/coveouiresultssxa-867402121" />
+            <r
+              uid="{973471AF-74B7-4914-A551-6CE3D22BF998}"
+              p:after="r[@uid='{336A7443-9714-42E6-97F0-BF79BDE78B47}']"
               s:ds="{027BC48B-07F2-4CF1-A745-B87C9A0D9AAE}"
               s:id="{BE1FC686-979C-4803-B043-505F14F0F6CB}"
               s:par=""
@@ -213,6 +219,10 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{E93E190F-3398-489D-B3A3-A3B0D9BB33C5}"
+    - ID: "4c2f221f-9426-45ed-9eeb-c79bb3169565"
+      Hint: StickyNotes
+      Value: |
+        {"items":[]}
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: test

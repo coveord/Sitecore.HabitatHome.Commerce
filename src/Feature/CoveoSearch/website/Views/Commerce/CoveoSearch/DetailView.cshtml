@@ -1,0 +1,16 @@
+﻿@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.HabitatHome.Feature.CoveoSearch.Models.DetailViewModel
+
+<script type="text/javascript" src="https://static.cloud.coveo.com/coveo.analytics.js/coveoua.js"></script>
+
+<div @Html.Sxa().Component("cxa-coveosearch-detailview-component", Model.Attributes) data-cxa-component-class="DetailView" data-cxa-component-initialized="false" data-cxa-component-type="component">
+    <input type="hidden" name="currentCatalogItemId" value="@Model.ProductId" data-bind="value: productId" />
+    <input type="hidden" name="name" value="@Model.DisplayName" data-bind="value: name" />
+    <input type="hidden" name="price" value="@Model.ListPrice" data-bind="value: price" />
+    <input type="hidden" name="discountedPrice" value="@Model.AdjustedPrice" data-bind="value: discountedPrice" />
+    <input type="hidden" name="categories" value="@Model.Categories" data-bind="value: categories" />
+    <input type="hidden" name="reportingCategory" value="@Model.ReportingCategory" data-bind="value: reportingCategory" />
+    <input type="hidden" name="brands" value="@Model.Brands" data-bind="value: brands" />
+    <input type="hidden" name="reportingBrand" value="@Model.ReportingBrand" data-bind="value: reportingBrand" />
+</div>
