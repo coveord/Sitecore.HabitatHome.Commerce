@@ -4,10 +4,6 @@ Parent: "c8903b08-88dd-49d4-8a68-f401ae7e0d46"
 Template: "25577fde-9c8c-4d1c-9b65-b6c16aa16881"
 Path: /sitecore/content/Habitat Sites/Habitat Home/Settings/Coveo Global Parameters/Global Analytics/Product Recommendation Analytics
 DB: master
-SharedFields:
-- ID: "3f67f75a-0451-4ee8-83e3-866b047f0db4"
-  Hint: SearchHub
-  Value: Product Recommendations
 Languages:
 - Language: en
   Versions:
