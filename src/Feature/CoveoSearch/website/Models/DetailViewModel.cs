@@ -8,47 +8,17 @@ namespace Sitecore.HabitatHome.Feature.CoveoSearch.Models
 {
     public class DetailViewModel : BaseCommerceRenderingModel
     {
-        private CatalogItemRenderingModel p_CatalogItemRenderingModel;
+        private readonly CatalogItemRenderingModel m_CatalogItemRenderingModel;
 
-        public string ProductId
-        {
-            get
-            {
-                return p_CatalogItemRenderingModel.ProductId;
-            }
-        }
+        public string ProductId => m_CatalogItemRenderingModel.ProductId;
 
-        public string DisplayName
-        {
-            get
-            {
-                return p_CatalogItemRenderingModel.DisplayName;
-            }
-        }
+        public string DisplayName => m_CatalogItemRenderingModel.DisplayName;
 
-        public decimal? ListPrice
-        {
-            get
-            {
-                return p_CatalogItemRenderingModel.ListPrice;
-            }
-        }
+        public decimal? ListPrice => m_CatalogItemRenderingModel.ListPrice;
 
-        public decimal? AdjustedPrice
-        {
-            get
-            {
-                return p_CatalogItemRenderingModel.AdjustedPrice;
-            }
-        }
+        public decimal? AdjustedPrice => m_CatalogItemRenderingModel.AdjustedPrice;
 
-        public string[] CategoryIds
-        {
-            get
-            {
-                return p_CatalogItemRenderingModel.CatalogItem.Fields["ParentCategoryList"].Value.Split('|');
-            }
-        }
+        public string[] CategoryIds => m_CatalogItemRenderingModel.CatalogItem.Fields["ParentCategoryList"].Value.Split('|');
 
         public string Categories
         {
@@ -77,19 +47,15 @@ namespace Sitecore.HabitatHome.Feature.CoveoSearch.Models
             }
         }
 
-        public string ReportingBrand
-        {
-            get
-            {
-                return p_CatalogItemRenderingModel.CatalogItem.Fields["Brand"].Value;
-            }
-        }
+        public string ReportingBrand => m_CatalogItemRenderingModel.CatalogItem.Fields["Brand"].Value;
+
+        public string Language => m_CatalogItemRenderingModel.CatalogItem.Language.Name;
 
         public DetailViewModel(CatalogItemRenderingModel catalogItemRenderingModel)
         {
             Assert.ArgumentNotNull(catalogItemRenderingModel, "catalogItemRenderingModel");
 
-            p_CatalogItemRenderingModel = catalogItemRenderingModel;
+            m_CatalogItemRenderingModel = catalogItemRenderingModel;
         }
     }
 }

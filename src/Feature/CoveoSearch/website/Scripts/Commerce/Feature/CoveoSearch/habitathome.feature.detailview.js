@@ -27,6 +27,7 @@
     var reportingCategory = component.GetHiddenInputValue("reportingCategory");
     var brands = JSON.parse(component.GetHiddenInputValue("brands"));
     var reportingBrand = component.GetHiddenInputValue("reportingBrand");
+    var language= component.GetHiddenInputValue("language");
 
     // Set the model properties
     component.model = new DetailViewViewModel();
@@ -38,6 +39,7 @@
     component.model.reportingCategory(reportingCategory);
     component.model.brands(brands);
     component.model.reportingBrand(reportingBrand);
+    component.model.language(language);
 
     component.Name = "CXA/Feature/DetailView";
 
@@ -83,12 +85,12 @@
         }
 
         var coveoAnalyticsClient = new coveoanalytics.analytics.Client({
-            endpoint: 'https://habitathome.dev.local/coveo/rest/coveoanalytics'
+            endpoint: document.location.origin + '/coveo/rest/coveoanalytics'
         });
         coveoAnalyticsClient.sendCustomEvent({
             eventType: "detailView",
             eventValue: component.model.productId(),
-            language: 'en',
+            language: component.model.language(),
             originLevel1: 'shop',
             originLevel2: 'Default',
             originLevel3: document.referrer,

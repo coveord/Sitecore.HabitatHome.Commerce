@@ -10,6 +10,7 @@
     detailViewViewModelSelf.brands = ko.observable();
     detailViewViewModelSelf.reportingBrand = ko.observable();
     detailViewViewModelSelf.taxonomy = ko.observable();
+    detailViewViewModelSelf.language = ko.observable();
 
     detailViewViewModelSelf.IsValid = function () {
         return detailViewViewModelSelf.productId() &&
