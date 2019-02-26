@@ -1,8 +1,9 @@
-﻿namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
+﻿using System.Collections.Generic;
+
+namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {
     public interface ICoveoIndexableCommerceItem
     {
-        string Name { get; }
-        string Brand { get; }
+        IDictionary<string, object> Metadata { get; }
     }
 }

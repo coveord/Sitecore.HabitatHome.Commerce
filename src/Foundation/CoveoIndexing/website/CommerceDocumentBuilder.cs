@@ -1,20 +1,34 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using Sitecore.HabitatHome.Foundation.CoveoIndexing.Extractors;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {
     public class CommerceDocumentBuilder
     {
-        public ICoveoIndexableCommerceItem Build(JToken p_SellableItem)
+        private readonly IEnumerable<IExtractor> m_Extractors;
+
+        public CommerceDocumentBuilder(IEnumerable<IExtractor> p_Extractors)
         {
-            return new CoveoIndexableCommerceItem {
-                Name = ExtractProperty(p_SellableItem, SellableItemEntityProperties.Name),
-                Brand = ExtractProperty(p_SellableItem, SellableItemEntityProperties.Brand)
-            };
+            m_Extractors = p_Extractors;
         }
 
-        private string ExtractProperty(JToken p_SellableItem, string p_PropertyName)
+        public ICoveoIndexableCommerceItem Build(JToken p_SellableItem)
         {
-            return p_SellableItem[p_PropertyName].Value<string>();
+            var indexableItem = new CoveoIndexableCommerceItem();
+            RunExtractors(p_SellableItem, indexableItem);
+
+            return indexableItem;
+        }
+
+        private void RunExtractors(JToken p_SellableItem, ICoveoIndexableCommerceItem p_IndexableItem)
+        {
+            foreach (IExtractor extractor in m_Extractors) {
+                object extractedValue = extractor.Extract(p_SellableItem);
+                if (extractedValue != null) {
+                    p_IndexableItem.Metadata.Add(extractor.OutputMetadataName, extractedValue);
+                }
+            }
         }
     }
 }

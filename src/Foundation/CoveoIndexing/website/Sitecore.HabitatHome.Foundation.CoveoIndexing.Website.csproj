@@ -82,6 +82,8 @@
     <Compile Include="ComputedFields\RemoveValuesReferencedFieldComputedField.cs" />
     <Compile Include="ComputedFields\TransformableReferencedFieldComputedField.cs" />
     <Compile Include="CoveoIndexableCommerceItem.cs" />
+    <Compile Include="Extractors\IExtractor.cs" />
+    <Compile Include="Extractors\PropertyExtractor.cs" />
     <Compile Include="ICoveoIndexableCommerceItem.cs" />
     <Compile Include="Processors\ExcludeDuplicateProductsCoveoInboundFilter.cs" />
     <Compile Include="Processors\ExcludeItemsCoveoInboundFilter.cs" />

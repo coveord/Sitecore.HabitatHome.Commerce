@@ -1,5 +1,8 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using Sitecore.HabitatHome.Foundation.CoveoIndexing.Extractors;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests
 {
@@ -22,7 +25,12 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests
         [SetUp]
         public void SetUp()
         {
-            m_DocumentBuilder = new CommerceDocumentBuilder();
+            IEnumerable<IExtractor> extractors = new List<IExtractor> {
+                new PropertyExtractor("Name", "Name"),
+                new PropertyExtractor("Brand", "Brand")
+            };
+            
+            m_DocumentBuilder = new CommerceDocumentBuilder(extractors);
         }
 
         [Test]
@@ -38,7 +46,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests
         {
             var indexableItem = BuildDocument();
 
-            Assert.AreEqual(SELLABLE_ITEM_NAME, indexableItem.Name);
+            Assert.AreEqual(SELLABLE_ITEM_NAME, indexableItem.Metadata["Name"]);
         }
 
         [Test]
@@ -46,7 +54,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests
         {
             var indexableItem = BuildDocument();
 
-            Assert.AreEqual(SELLABLE_ITEM_BRAND, indexableItem.Brand);
+            Assert.AreEqual(SELLABLE_ITEM_BRAND, indexableItem.Metadata["Brand"]);
         }
 
         private ICoveoIndexableCommerceItem BuildDocument()
