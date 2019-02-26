@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		deploy-commerce-engine.ps1 = deploy-commerce-engine.ps1
+		deploy-CoveoIndexing.ps1 = deploy-CoveoIndexing.ps1
 		gulp-config.js = gulp-config.js
 		gulpfile.js = gulpfile.js
 		nuget.config = nuget.config
