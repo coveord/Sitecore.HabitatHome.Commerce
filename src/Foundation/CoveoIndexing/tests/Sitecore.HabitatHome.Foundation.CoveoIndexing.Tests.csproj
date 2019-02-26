@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\..\..\..\packages\NUnit.3.11.0\build\NUnit.props')" />
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -9,12 +10,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F2531D3A-5F8E-4ACB-A364-2D76011E87C1}</ProjectGuid>
+    <ProjectGuid>{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.HabitatHome.Foundation.CoveoIndexing</RootNamespace>
-    <AssemblyName>Sitecore.HabitatHome.Foundation.CoveoIndexing</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -45,24 +46,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Coveo.Framework">
-      <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.Framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Coveo.SearchProviderBase">
-      <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.SearchProviderBase.dll</HintPath>
-    </Reference>
-    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="1.0.7" />
-    <PackageReference Include="Sitecore.Commerce.Engine.Connect" Version="2.2.86" />
-    <PackageReference Include="Sitecore.ContentSearch.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.Kernel.NoReferences" Version="9.0.180604" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Foundation\Commerce\Foundation.CoveoIndexing.config" />
-    <Content Include="PushCommerce.aspx" />
+    <None Include="packages.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -72,28 +62,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommerceDocumentBuilder.cs" />
-    <Compile Include="ComputedFields\FieldValueComputedField.cs" />
-    <Compile Include="ComputedFields\FieldValueStringReplaceComputedField.cs" />
-    <Compile Include="ComputedFields\ListPriceComputedField.cs" />
-    <Compile Include="ComputedFields\ProductImagesUrlComputedField.cs" />
-    <Compile Include="ComputedFields\ProductVariantsReferencedField.cs" />
-    <Compile Include="ComputedFields\RemoveValuesAndSingularizeReferencedFieldComputedField.cs" />
-    <Compile Include="ComputedFields\RemoveValuesReferencedFieldComputedField.cs" />
-    <Compile Include="ComputedFields\TransformableReferencedFieldComputedField.cs" />
-    <Compile Include="Processors\ExcludeDuplicateProductsCoveoInboundFilter.cs" />
-    <Compile Include="Processors\ExcludeItemsCoveoInboundFilter.cs" />
+    <Compile Include="CommerceDocumentBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PushCommerce.aspx.cs">
-      <DependentUpon>PushCommerce.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PushCommerce.aspx.designer.cs">
-      <DependentUpon>PushCommerce.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SellableItemCrawler.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\website\Sitecore.HabitatHome.Foundation.CoveoIndexing.Website.csproj">
+      <Project>{F2531D3A-5F8E-4ACB-A364-2D76011E87C1}</Project>
+      <Name>Sitecore.HabitatHome.Foundation.CoveoIndexing.Website</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -125,6 +102,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\NUnit.3.11.0\build\NUnit.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

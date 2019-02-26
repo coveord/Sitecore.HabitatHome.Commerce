@@ -137,6 +137,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoveoSearch", "CoveoSearch"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Feature.CoveoSearch.Website", "src\Feature\CoveoSearch\website\Sitecore.HabitatHome.Feature.CoveoSearch.Website.csproj", "{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests", "src\Foundation\CoveoIndexing\tests\Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests.csproj", "{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -253,6 +255,10 @@ Global
 		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -315,6 +321,7 @@ Global
 		{F2531D3A-5F8E-4ACB-A364-2D76011E87C1} = {859CEED8-65A9-454A-80F2-9C24EDFCB4E6}
 		{A13E1037-50C9-43FF-B2F5-DC12015AEC97} = {05829E0F-331A-44AF-BEB8-3AD54EE35694}
 		{CF27D16D-7B19-4D2E-A491-DAEDC0DDDBB7} = {A13E1037-50C9-43FF-B2F5-DC12015AEC97}
+		{CB76D6CE-DD46-4D69-A7A3-9760AFB8A5FE} = {859CEED8-65A9-454A-80F2-9C24EDFCB4E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {092E4BB9-63E2-476F-91D9-389412140FC4}
