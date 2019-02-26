@@ -81,6 +81,8 @@
     <Compile Include="ComputedFields\RemoveValuesAndSingularizeReferencedFieldComputedField.cs" />
     <Compile Include="ComputedFields\RemoveValuesReferencedFieldComputedField.cs" />
     <Compile Include="ComputedFields\TransformableReferencedFieldComputedField.cs" />
+    <Compile Include="CoveoIndexableCommerceItem.cs" />
+    <Compile Include="ICoveoIndexableCommerceItem.cs" />
     <Compile Include="Processors\ExcludeDuplicateProductsCoveoInboundFilter.cs" />
     <Compile Include="Processors\ExcludeItemsCoveoInboundFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +94,7 @@
       <DependentUpon>PushCommerce.aspx</DependentUpon>
     </Compile>
     <Compile Include="SellableItemCrawler.cs" />
+    <Compile Include="SellableItemEntityProperties.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
