@@ -11,7 +11,7 @@
         <div>
             <asp:Button ID="PushButton" Text="Push" OnClick="HandlePushButtonClick" runat="server"/>
             <h2>Logs</h2>
-            <div ID="LogPanel" runat="server"></div>
+            <pre ID="LogPanel" runat="server"></pre>
         </div>
     </form>
 </body>
