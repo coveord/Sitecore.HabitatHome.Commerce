@@ -108,6 +108,7 @@
       <DependentUpon>PushCommerce.aspx</DependentUpon>
     </Compile>
     <Compile Include="SellableItemCrawler.cs" />
+    <Compile Include="SellableItemConnector.cs" />
     <Compile Include="CoveoIndexableCommerceItemFields.cs" />
     <Compile Include="SellableItemEntityProperties.cs" />
   </ItemGroup>
