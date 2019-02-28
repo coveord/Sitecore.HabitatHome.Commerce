@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Coveo.AbstractLayer.RepositoryItem;
 using Coveo.Framework.CNL;
 using Newtonsoft.Json.Linq;
 using Sitecore.HabitatHome.Foundation.CoveoIndexing.Extractors;
@@ -14,18 +15,18 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
             m_Extractors = p_Extractors;
         }
 
-        public ICoveoIndexableCommerceItem Build(JToken p_SellableItem)
+        public CoveoIndexableItem Build(JToken p_SellableItem)
         {
             Precondition.NotNull(p_SellableItem, () => () => p_SellableItem);
 
-            var indexableItem = new CoveoIndexableCommerceItem();
+            var indexableItem = new CoveoIndexableItem();
             RunExtractors(p_SellableItem, indexableItem);
 
             return indexableItem;
         }
 
         private void RunExtractors(JToken p_SellableItem,
-                                   ICoveoIndexableCommerceItem p_IndexableItem)
+                                   CoveoIndexableItem p_IndexableItem)
         {
             Precondition.NotNull(p_SellableItem, () => () => p_SellableItem);
             Precondition.NotNull(p_IndexableItem, () => () => p_IndexableItem);
@@ -40,7 +41,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
         }
 
         private void RunExtractor(JToken p_SellableItem,
-                                  ICoveoIndexableCommerceItem p_IndexableItem,
+                                  CoveoIndexableItem p_IndexableItem,
                                   IExtractor p_Extractor)
         {
             Precondition.NotNull(p_SellableItem, () => () => p_SellableItem);
@@ -49,7 +50,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 
             object extractedValue = p_Extractor.Extract(p_SellableItem);
             if (extractedValue != null) {
-                p_IndexableItem.Metadata.Add(p_Extractor.OutputMetadataName, extractedValue);
+                p_IndexableItem.SetMetadata(p_Extractor.OutputMetadataName, extractedValue);
             }
         }
     }

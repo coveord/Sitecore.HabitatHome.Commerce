@@ -45,8 +45,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Coveo.AbstractLayer, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.AbstractLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Coveo.CloudPlatformClient">
+      <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.CloudPlatformClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Coveo.CloudPlatformClientBase, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.CloudPlatformClientBase.dll</HintPath>
+    </Reference>
     <Reference Include="Coveo.Framework">
       <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Coveo.Framework.Compression">
+      <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.Framework.Compression.dll</HintPath>
     </Reference>
     <Reference Include="Coveo.SearchProviderBase">
       <HintPath>..\..\..\..\lib\Modules\Coveo\Coveo.SearchProviderBase.dll</HintPath>
@@ -81,10 +95,8 @@
     <Compile Include="ComputedFields\RemoveValuesAndSingularizeReferencedFieldComputedField.cs" />
     <Compile Include="ComputedFields\RemoveValuesReferencedFieldComputedField.cs" />
     <Compile Include="ComputedFields\TransformableReferencedFieldComputedField.cs" />
-    <Compile Include="CoveoIndexableCommerceItem.cs" />
     <Compile Include="Extractors\IExtractor.cs" />
     <Compile Include="Extractors\PropertyExtractor.cs" />
-    <Compile Include="ICoveoIndexableCommerceItem.cs" />
     <Compile Include="Processors\ExcludeDuplicateProductsCoveoInboundFilter.cs" />
     <Compile Include="Processors\ExcludeItemsCoveoInboundFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

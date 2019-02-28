@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Coveo.AbstractLayer.RepositoryItem;
 using Moq;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -45,11 +46,11 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests
         }
 
         [Test]
-        public void GivenSellableItem_WhenBuildingDocument_ExpectICoveoIndexableCommerceItem()
+        public void GivenSellableItem_WhenBuildingDocument_ExpectACoveoIndexableItem()
         {
             var indexableItem = BuildDocument();
 
-            Assert.IsInstanceOf<ICoveoIndexableCommerceItem>(indexableItem);
+            Assert.IsInstanceOf<CoveoIndexableItem>(indexableItem);
         }
 
         [Test]
@@ -77,7 +78,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.Tests
             Assert.DoesNotThrow(() => BuildDocument());
         }
 
-        private ICoveoIndexableCommerceItem BuildDocument()
+        private CoveoIndexableItem BuildDocument()
         {
             return m_DocumentBuilder.Build(m_SellableItem);
         }
