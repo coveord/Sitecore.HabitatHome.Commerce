@@ -20,6 +20,16 @@ using Sitecore.ContentSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Coveo.AbstractLayer.FieldManagement;
+using Coveo.CloudPlatformClient.Conversion;
+using Coveo.CloudPlatformClient.FieldsManagement;
+using Coveo.CloudPlatformClient.IndexAdministration;
+using Coveo.CloudPlatformClient.SecurityCacheManagement;
+using Coveo.CloudPlatformClient.SecurityProviderManagement;
+using Coveo.CloudPlatformClient.SourceManagement;
+using Coveo.Framework.Caching;
+using Coveo.Framework.Databases;
+using Coveo.Framework.Pipelines;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {
@@ -27,7 +37,8 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
     {
         private readonly SellableItemConnector m_Connector;
         private readonly CommerceDocumentBuilder m_DocumentBuilder;
-        private readonly ICoveoFieldMap m_FieldMap;
+        private readonly IFieldNameTranslator m_FieldNameTranslator;
+        private readonly ICloudPlatformAdminModule m_CloudPlatformAdminModule;
         private readonly CloudPlatformDocumentsHandler m_DocumentsHandler;
         private readonly string m_IndexName;
         private readonly string m_SourceName;
@@ -50,8 +61,51 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
             m_SourceName = indexNamesBuilder.BuildSourceName();
 
             CoveoIndexConfiguration configuration = (CoveoIndexConfiguration) p_Index.Configuration;
-            m_FieldMap = (ICoveoFieldMap) configuration.FieldMap;
+            ICoveoFieldMap fieldMap = (ICoveoFieldMap) configuration.FieldMap;
+            m_FieldNameTranslator = new CoveoFieldNameTranslator {
+                FieldMap = fieldMap,
+                IndexNamesBuilder = indexNamesBuilder
+            };
             ICloudPlatformClient cloudPlatformClient = new CloudPlatformClientFactory().GetCloudPlatformClient(configuration.CloudPlatformConfiguration);
+
+            IEnumerable<IDatabaseWrapper> databaseWrappers = new IDatabaseWrapper[] { new DatabaseWrapper("master") };
+            SitecoreContextWrapper sitecoreContextWrapper = new SitecoreContextWrapper();
+            IFacetItemsFetcher facetItemsFetcher = new FacetItemsFetcher(sitecoreContextWrapper);
+            PipelineRunner pipelineRunner = new PipelineRunner();
+            PipelineRunnerHandler pipelineRunnerHandler = new PipelineRunnerHandler(pipelineRunner);
+            IFieldFetcherFactory fieldFetcherFactory = new FieldFetcherFactory(pipelineRunnerHandler,
+                                                                               true);
+            ISitecoreFactory sitecoreFactoryWrapper = new SitecoreFactoryWrapper();
+            FieldsCacheHandler fieldsCacheHandler = new FieldsCacheHandler(sitecoreFactoryWrapper);
+            IFieldsHandlerUtility fieldsHandlerUtility = new FieldsHandlerUtility(configuration,
+                                                                                  databaseWrappers, 
+                                                                                  m_IndexName,
+                                                                                  facetItemsFetcher,
+                                                                                  fieldFetcherFactory,
+                                                                                  m_FieldNameTranslator,
+                                                                                  fieldMap,
+                                                                                  pipelineRunnerHandler,
+                                                                                  fieldsCacheHandler);
+            IFieldsHandlerUtility cachedFieldsHandlerUtility = new CachedFieldsHandlerUtility(fieldsHandlerUtility);
+            ICloudFieldConfigConverter cloudFieldConfigConverter = new CloudFieldConfigConverter(";");
+            IndexDatabaseProperties indexDatabaseProperties = new IndexDatabaseProperties(p_Index.PropertyStore);
+            ICloudPlatformFieldsHandler cloudPlatformFieldsHandler = new CloudPlatformFieldsHandler(cachedFieldsHandlerUtility,
+                                                                                                    cloudFieldConfigConverter,
+                                                                                                    indexDatabaseProperties,
+                                                                                                    cloudPlatformClient,
+                                                                                                    100);
+            ICloudPlatformSecurityProviderHandler cloudPlatformSecurityProviderHandler = new CloudPlatformSecurityProviderHandler(cloudPlatformClient,
+                                                                                                                                  indexDatabaseProperties);
+            ICloudPlatformSecurityCacheHandler cloudPlatformSecurityCacheHandler = new CloudPlatformSecurityCacheHandler(cloudPlatformClient);
+            ICloudPlatformSourceHandler cloudPlatformSourceHandler = new CloudPlatformSourceHandler(cloudPlatformClient);
+
+            m_CloudPlatformAdminModule = new CloudPlatformAdminModule(configuration,
+                                                                      cloudPlatformFieldsHandler,
+                                                                      cloudPlatformSecurityProviderHandler,
+                                                                      cloudPlatformSecurityCacheHandler,
+                                                                      cloudPlatformSourceHandler,
+                                                                      m_FieldNameTranslator);
+
             ICompressedStreamHandler compressedStreamHandler = new CompressedStreamHandler();
             IPermissionsProvider permissionsProvider = new PermissionsProvider(configuration.SecurityConfiguration.AnonymousUsers);
             ISecurityModelMapper<IList<CloudPermissionLevel>> cloudSecurityMapper = new CloudSecurityMapper();
@@ -63,8 +117,9 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
             IThreadHandlerFactory threadHandlerFactory = new ThreadHandlerFactory();
             IThreadHandlerUtility threadHandlerUtility = new ThreadHandlerUtility();
             IThreadContextFactory threadContextFactory = new ThreadContextFactory();
+
             m_DocumentsHandler = new CloudPlatformDocumentsHandler(configuration,
-                                                                   m_FieldMap,
+                                                                   fieldMap,
                                                                    cloudPlatformClient,
                                                                    cloudIndexableDocumentFactory,
                                                                    threadHandlerFactory,
@@ -76,13 +131,20 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
         {
             List<string> logs = new List<string>();
 
+            logs.Add("Setup Requirements...");
+            m_CloudPlatformAdminModule.SetupRequirements();
+            logs.Add("Done Setup Requirements");
+
             RebuildContext rebuildContext = CreateRebuildContext();
 
             logs.Add("Starting Rebuild...");
             m_DocumentsHandler.StartRebuild(rebuildContext);
+            logs.Add("Rebuild Started");
 
+            logs.Add("Pushing items...");
             IEnumerable<string> itemLogs = GetSellableItems().Select(sellableItem => CrawlSellableItem(sellableItem, rebuildContext));
             logs.AddRange(itemLogs);
+            logs.Add("Done Pushing items");
 
             logs.Add("Stopping Rebuild...");
             m_DocumentsHandler.StopRebuild(rebuildContext);
@@ -124,9 +186,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
             RebuildContext rebuildContext = new RebuildContext {
                 SourceName = m_SourceName,
                 IndexName = m_IndexName,
-                FieldNameTranslator = new CoveoFieldNameTranslator {
-                    FieldMap = m_FieldMap
-                },
+                FieldNameTranslator = m_FieldNameTranslator,
                 LastRebuildDate = DateTime.Now.AddSeconds(-10)
             };
             return rebuildContext;
