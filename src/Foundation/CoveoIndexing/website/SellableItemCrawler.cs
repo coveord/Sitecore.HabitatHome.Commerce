@@ -1,17 +1,27 @@
 ﻿using Coveo.AbstractLayer.Communication.Index;
+using Coveo.AbstractLayer.FieldManagement;
 using Coveo.AbstractLayer.RepositoryItem;
 using Coveo.AbstractLayer.Security;
+using Coveo.CloudPlatformClient.Conversion;
 using Coveo.CloudPlatformClient.DocumentManagement;
 using Coveo.CloudPlatformClient.DocumentManagement.Permissions;
+using Coveo.CloudPlatformClient.FieldsManagement;
+using Coveo.CloudPlatformClient.IndexAdministration;
+using Coveo.CloudPlatformClient.SecurityCacheManagement;
+using Coveo.CloudPlatformClient.SecurityProviderManagement;
+using Coveo.CloudPlatformClient.SourceManagement;
 using Coveo.CloudPlatformClient.ThreadPool;
 using Coveo.CloudPlatformClientBase;
 using Coveo.CloudPlatformClientBase.Communication;
 using Coveo.CloudPlatformClientBase.DocumentManagement.Permissions;
 using Coveo.Framework;
+using Coveo.Framework.Caching;
 using Coveo.Framework.CNL;
 using Coveo.Framework.Compression;
 using Coveo.Framework.Configuration;
+using Coveo.Framework.Databases;
 using Coveo.Framework.Fields;
+using Coveo.Framework.Pipelines;
 using Coveo.Framework.Utils;
 using Coveo.SearchProvider;
 using Newtonsoft.Json;
@@ -20,16 +30,6 @@ using Sitecore.ContentSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Coveo.AbstractLayer.FieldManagement;
-using Coveo.CloudPlatformClient.Conversion;
-using Coveo.CloudPlatformClient.FieldsManagement;
-using Coveo.CloudPlatformClient.IndexAdministration;
-using Coveo.CloudPlatformClient.SecurityCacheManagement;
-using Coveo.CloudPlatformClient.SecurityProviderManagement;
-using Coveo.CloudPlatformClient.SourceManagement;
-using Coveo.Framework.Caching;
-using Coveo.Framework.Databases;
-using Coveo.Framework.Pipelines;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {

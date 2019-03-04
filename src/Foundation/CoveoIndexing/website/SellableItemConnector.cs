@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Coveo.Framework.CNL;
+﻿using Coveo.Framework.CNL;
 using Newtonsoft.Json.Linq;
 using Sitecore.Commerce.Engine.Connect.DataProvider;
+using System.Collections.Generic;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {

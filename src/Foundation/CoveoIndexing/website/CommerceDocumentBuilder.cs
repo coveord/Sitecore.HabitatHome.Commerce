@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Coveo.AbstractLayer.RepositoryItem;
+﻿using Coveo.AbstractLayer.RepositoryItem;
 using Coveo.Framework.CNL;
 using Newtonsoft.Json.Linq;
 using Sitecore.HabitatHome.Foundation.CoveoIndexing.Extractors;
+using System.Collections.Generic;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {
