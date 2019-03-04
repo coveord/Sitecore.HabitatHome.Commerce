@@ -77,6 +77,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Commerce\Foundation.CoveoIndexing.config" />
     <Content Include="PushCommerce.aspx" />
+    <Content Include="App_Config\Include\Foundation\Commerce\Foundation.CoveoIndexing.SellableItems.Push.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

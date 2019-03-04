@@ -1,3 +1,4 @@
 Copy-Item -Path .\src\Foundation\CoveoIndexing\website\bin\Sitecore.HabitatHome.Foundation.CoveoIndexing.dll -Destination C:\inetpub\wwwroot\habitathome.dev.local\bin\
 Copy-Item -Path .\src\Foundation\CoveoIndexing\website\App_Config\Include\Foundation\Commerce\Foundation.CoveoIndexing.config -Destination C:\inetpub\wwwroot\habitathome.dev.local\App_Config\Include\Foundation\Commerce\
+Copy-Item -Path .\src\Foundation\CoveoIndexing\website\App_Config\Include\Foundation\Commerce\Foundation.CoveoIndexing.SellableItems.Push.config -Destination C:\inetpub\wwwroot\habitathome.dev.local\App_Config\Include\Foundation\Commerce\
 Copy-Item -Path .\src\Foundation\CoveoIndexing\website\PushCommerce.aspx -Destination C:\inetpub\wwwroot\habitathome.dev.local\
