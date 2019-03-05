@@ -30,13 +30,15 @@ using Sitecore.ContentSearch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Coveo.Framework.Collections;
 
 namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 {
     public class SellableItemCrawler
     {
         private readonly SellableItemConnector m_Connector;
-        private readonly CommerceDocumentBuilder m_DocumentBuilder;
+        private readonly CommerceDocumentBuilder m_ProductDocumentBuilder;
+        private readonly CommerceDocumentBuilder m_VariantDocumentBuilder;
         private readonly IFieldNameTranslator m_FieldNameTranslator;
         private readonly ICloudPlatformAdminModule m_CloudPlatformAdminModule;
         private readonly CloudPlatformDocumentsHandler m_DocumentsHandler;
@@ -44,15 +46,18 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
         private readonly string m_SourceName;
 
         public SellableItemCrawler(SellableItemConnector p_Connector,
-                                   CommerceDocumentBuilder p_DocumentBuilder,
+                                   CommerceDocumentBuilder p_ProductDocumentBuilder,
+                                   CommerceDocumentBuilder p_VariantDocumentBuilder,
                                    ISearchIndex p_Index)
         {
             Precondition.NotNull(p_Connector, () => () => p_Connector);
-            Precondition.NotNull(p_DocumentBuilder, () => () => p_DocumentBuilder);
+            Precondition.NotNull(p_ProductDocumentBuilder, () => () => p_ProductDocumentBuilder);
+            Precondition.NotNull(p_VariantDocumentBuilder, () => () => p_VariantDocumentBuilder);
             Precondition.NotNull(p_Index, () => () => p_Index);
 
             m_Connector = p_Connector;
-            m_DocumentBuilder = p_DocumentBuilder;
+            m_ProductDocumentBuilder = p_ProductDocumentBuilder;
+            m_VariantDocumentBuilder = p_VariantDocumentBuilder;
 
             m_IndexName = p_Index.Name;
             IUrlUtilities urlUtilities = new UrlUtilities();
@@ -142,7 +147,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
             logs.Add("Rebuild Started");
 
             logs.Add("Pushing items...");
-            IEnumerable<string> itemLogs = GetSellableItems().Select(sellableItem => CrawlSellableItem(sellableItem, rebuildContext));
+            IEnumerable<string> itemLogs = CrawlSellableItems(rebuildContext);
             logs.AddRange(itemLogs);
             logs.Add("Done Pushing items");
 
@@ -153,17 +158,46 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
             return logs;
         }
 
+        private RebuildContext CreateRebuildContext()
+        {
+            RebuildContext rebuildContext = new RebuildContext
+            {
+                SourceName = m_SourceName,
+                IndexName = m_IndexName,
+                FieldNameTranslator = m_FieldNameTranslator,
+                LastRebuildDate = DateTime.Now.AddSeconds(-10)
+            };
+            return rebuildContext;
+        }
+
+        private IEnumerable<string> CrawlSellableItems(RebuildContext p_RebuildContext)
+        {
+            return GetSellableItems().Select(sellableItem => CrawlSellableItem(sellableItem, p_RebuildContext));
+        }
+
+        private IEnumerable<JToken> GetSellableItems()
+        {
+            return m_Connector.GetSellableItems();
+        }
+
         private string CrawlSellableItem(JToken p_SellableItem,
                                          RebuildContext p_RebuildContext)
         {
-            CoveoIndexableItem indexableSellableItem = m_DocumentBuilder.Build(p_SellableItem);
+            CoveoIndexableItem indexableSellableItem = m_ProductDocumentBuilder.Build(p_SellableItem);
 
+            string name = (string) indexableSellableItem.Metadata[CoveoIndexableCommerceItemFields.Name];
             string productId = (string) indexableSellableItem.Metadata[CoveoIndexableCommerceItemFields.ProductId];
             string uri = $"http://commerce/{productId}";
+            string brand = "";
+            try {
+                brand = (string) indexableSellableItem.Metadata[CoveoIndexableCommerceItemFields.Brand];
+            } catch {
+                // Ignore exceptions
+            }
 
             indexableSellableItem.ClickableUri = uri;
             indexableSellableItem.Id = uri;
-            indexableSellableItem.Title = (string) indexableSellableItem.Metadata[CoveoIndexableCommerceItemFields.Name];
+            indexableSellableItem.Title = name;
             indexableSellableItem.UniqueId = productId;
             indexableSellableItem.Uri = uri;
             indexableSellableItem.SetMetadata(PropertyStoreConstants.LAST_REBUILD_METADATA_KEY,
@@ -173,23 +207,58 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
                                            m_SourceName,
                                            uri);
 
-            return JsonConvert.SerializeObject(indexableSellableItem, Formatting.Indented);
+
+            string crawledVariants = CrawlSellableItemVariants(p_SellableItem, p_RebuildContext, productId, brand);
+
+            return JsonConvert.SerializeObject(indexableSellableItem, Formatting.Indented) + crawledVariants;
         }
 
-        private IEnumerable<JToken> GetSellableItems()
+        private string CrawlSellableItemVariants(JToken p_SellableItem,
+                                                 RebuildContext p_RebuildContext,
+                                                 string p_ProductId,
+                                                 string p_Brand)
         {
-            return m_Connector.GetSellableItems();
+            string crawledVariants = "";
+
+            GetSellableItemVariants(p_SellableItem).ForEach(sellableItemVariant => {
+                crawledVariants += CrawlSellableItemVariant(sellableItemVariant, p_RebuildContext, p_ProductId, p_Brand);
+            });
+
+            return crawledVariants;
         }
 
-        protected RebuildContext CreateRebuildContext()
+        private IEnumerable<JToken> GetSellableItemVariants(JToken p_SellableItem)
         {
-            RebuildContext rebuildContext = new RebuildContext {
-                SourceName = m_SourceName,
-                IndexName = m_IndexName,
-                FieldNameTranslator = m_FieldNameTranslator,
-                LastRebuildDate = DateTime.Now.AddSeconds(-10)
-            };
-            return rebuildContext;
+            return p_SellableItem.SelectTokens("$.Components[?(@['@odata.type'] == '#Sitecore.Commerce.Plugin.Catalog.ItemVariationsComponent')].ChildComponents[0]", false);
+        }
+
+        private string CrawlSellableItemVariant(JToken p_SellableItemVariant,
+                                                RebuildContext p_RebuildContext,
+                                                string p_ProductId,
+                                                string p_Brand)
+        {
+            CoveoIndexableItem indexableSellableItemVariant = m_VariantDocumentBuilder.Build(p_SellableItemVariant);
+
+            string variantName = (string) indexableSellableItemVariant.Metadata[CoveoIndexableCommerceItemFields.Name];
+            string variantId = (string) indexableSellableItemVariant.Metadata[CoveoIndexableCommerceItemFields.VariantId];
+            string variantUri = $"http://commerce/{variantId}";
+
+            indexableSellableItemVariant.ClickableUri = variantUri;
+            indexableSellableItemVariant.Id = variantUri;
+            indexableSellableItemVariant.Title = variantName;
+            indexableSellableItemVariant.UniqueId = variantId;
+            indexableSellableItemVariant.Uri = variantUri;
+            indexableSellableItemVariant.SetMetadata(PropertyStoreConstants.LAST_REBUILD_METADATA_KEY,
+                                                     p_RebuildContext.LastRebuildDate.ToIndexFormat());
+
+            indexableSellableItemVariant.SetMetadata(CoveoIndexableCommerceItemFields.ProductId, p_ProductId);
+            indexableSellableItemVariant.SetMetadata(CoveoIndexableCommerceItemFields.Brand, p_Brand);
+
+            m_DocumentsHandler.AddDocument(indexableSellableItemVariant,
+                                           m_SourceName,
+                                           variantUri);
+
+            return JsonConvert.SerializeObject(indexableSellableItemVariant, Formatting.Indented);
         }
     }
 }

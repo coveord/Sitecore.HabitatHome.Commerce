@@ -15,7 +15,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
         {
             CatalogRepository catalogRepository = new CatalogRepository();
             var connector = new SellableItemConnector(catalogRepository);
-            var documentBuilder = new CommerceDocumentBuilder(new List<IExtractor> {
+            var productDocumentBuilder = new CommerceDocumentBuilder(new List<IExtractor> {
                 new PropertyExtractor(SellableItemEntityProperties.Name,
                                       CoveoIndexableCommerceItemFields.Name),
                 new PropertyExtractor(SellableItemEntityProperties.Brand,
@@ -29,11 +29,20 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
                 new PropertyExtractor(SellableItemEntityProperties.Manufacturer,
                                       CoveoIndexableCommerceItemFields.Manufacturer)
             });
+            var variantDocumentBuilder = new CommerceDocumentBuilder(new List<IExtractor> {
+                new PropertyExtractor(SellableItemEntityProperties.Name,
+                                      CoveoIndexableCommerceItemFields.Name),
+                new PropertyExtractor(SellableItemEntityProperties.Description,
+                                      CoveoIndexableCommerceItemFields.Description),
+                new PropertyExtractor(SellableItemEntityProperties.VariantId,
+                                      CoveoIndexableCommerceItemFields.VariantId)
+            });
 
             var index = ContentSearchManager.GetIndex("Coveo_sellable_items_index");
 
             m_SellableItemCrawler = new SellableItemCrawler(connector,
-                                                            documentBuilder,
+                                                            productDocumentBuilder,
+                                                            variantDocumentBuilder,
                                                             index);
         }
 
