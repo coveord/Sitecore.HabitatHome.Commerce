@@ -1,0 +1,22 @@
+﻿---
+ID: "335d44fa-e423-4b7c-b0af-b29cf84338c9"
+Parent: "a92be83c-731c-4082-ac1b-b3d2573327a9"
+Template: "dfb615ac-9dfd-418f-84eb-15141e88d303"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Sorts/New Field Sort
+DB: master
+SharedFields:
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo79c4896b
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190107T195423Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

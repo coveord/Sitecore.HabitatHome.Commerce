@@ -1,0 +1,43 @@
+﻿---
+ID: "c2e831f5-0c1d-44e1-9d59-fc71eb892f36"
+Parent: "b7585c3b-01c7-4f1f-b4a6-2eb70fc4a58e"
+Template: "27ca6d98-d7d5-4b59-9de6-5238ea05bf81"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Scopes/Related Articles Filter
+DB: master
+SharedFields:
+- ID: "4eaa4851-dde1-47a5-a13d-b433533ff78a"
+  Hint: FilterExpressionRules
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule
+        uid="{657C314E-06E5-43DC-8A94-14601E50890D}">
+        <conditions>
+          <and
+            uid="DACAC7F9CF214A72AAD4F19E18B65BD2">
+            <condition
+              id="{3BE9D05A-3D10-4137-ADBB-5A5F1B2F05F2}"
+              uid="64F398B13E3C4898A976E6D95C4ECF7C"
+              templateid="{14807D83-9671-4D70-B0F4-F54012F2BFB8}" />
+            <condition
+              id="{36831DCB-0532-4E84-879C-25E09B094256}"
+              uid="6C2030D2DD5D4B1CB39E3306104AF133"
+              fieldname="_language"
+              operatorid="{4AC84242-881E-43D4-8E11-2EA27331DC8E}"
+              value="en" />
+          </and>
+        </conditions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181004T194027Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

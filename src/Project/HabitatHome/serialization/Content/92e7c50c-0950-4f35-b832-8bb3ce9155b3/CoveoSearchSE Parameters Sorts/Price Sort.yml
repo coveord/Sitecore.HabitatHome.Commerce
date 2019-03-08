@@ -1,0 +1,28 @@
+﻿---
+ID: "1a339133-e7de-4789-a7eb-c606c88b3112"
+Parent: "a92be83c-731c-4082-ac1b-b3d2573327a9"
+Template: "dfb615ac-9dfd-418f-84eb-15141e88d303"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Sorts/Price Sort
+DB: master
+SharedFields:
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveoc4254a3a
+- ID: "e59804dd-43af-4428-9dfd-f21a59329fad"
+  Hint: SortField
+  Value: productlistprice
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181221T205748Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
+    - ID: "b2235c32-0b2c-468c-bc58-6759a1bb3e9b"
+      Hint: SortCaption
+      Value: Sort by Price

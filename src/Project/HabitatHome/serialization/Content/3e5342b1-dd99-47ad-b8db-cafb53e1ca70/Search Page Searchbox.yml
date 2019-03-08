@@ -1,0 +1,25 @@
+﻿---
+ID: "5ce124a9-f024-416c-a78a-dcd688fc60d9"
+Parent: "3e5342b1-dd99-47ad-b8db-cafb53e1ca70"
+Template: "fab08d59-476f-4767-9acc-1a2fc1b09c4f"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Search Boxes/Search Page Searchbox
+DB: master
+SharedFields:
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo1be9d8b4
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T143802Z
+    - ID: "4c8f3093-237e-4bb3-a658-c58710710234"
+      Hint: PlaceholderText
+      Value: "Looking for something?"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

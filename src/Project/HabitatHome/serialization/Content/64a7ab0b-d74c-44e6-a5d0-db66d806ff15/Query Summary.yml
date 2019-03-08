@@ -1,0 +1,18 @@
+﻿---
+ID: "f9099768-d687-48bc-996a-5cbf321f76a3"
+Parent: "64a7ab0b-d74c-44e6-a5d0-db66d806ff15"
+Template: "6d2df13d-6d6c-4a71-a5fc-fbfd9827868d"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Components/Query Summary
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181002T155437Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

@@ -1,0 +1,22 @@
+﻿---
+ID: "c7a0a557-a242-43a3-9b5d-5307ac313c61"
+Parent: "cc129902-aae7-49b9-b6e3-5ada639e719c"
+Template: "25577fde-9c8c-4d1c-9b65-b6c16aa16881"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Analytics/Product Recommendation Analytics
+DB: master
+SharedFields:
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo075b63e2
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181005T210139Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

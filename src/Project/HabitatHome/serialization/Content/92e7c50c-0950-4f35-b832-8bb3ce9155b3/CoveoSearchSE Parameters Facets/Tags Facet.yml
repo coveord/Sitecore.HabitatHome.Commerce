@@ -1,0 +1,31 @@
+﻿---
+ID: "e28cf077-e695-421e-bd98-d1807706686a"
+Parent: "5915fe5f-898d-45d2-87d3-37247d9da02c"
+Template: "dc181cdf-76ab-45d5-9349-443af40bd6e2"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Facets/Tags Facet
+DB: master
+SharedFields:
+- ID: "21f86a99-b823-4cbb-8183-dea9d72855ca"
+  Hint: FacetField
+  Value: computedtags
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: facetTag
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181002T220800Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
+    - ID: "976807a8-e981-4127-9f1f-f12188a5550d"
+      Hint: FacetTitle
+      Value: Tags
+    - ID: "ba7a0fc4-8dee-4c05-9e80-a7e6b8cf89b7"
+      Hint: FacetName
+      Value: Tags

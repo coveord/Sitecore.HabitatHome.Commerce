@@ -1,0 +1,50 @@
+﻿---
+ID: "0a17a943-25e1-403c-8658-6747815f8bf1"
+Parent: "5915fe5f-898d-45d2-87d3-37247d9da02c"
+Template: "c70bda15-24e7-45be-86e3-5a96d9f32771"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Facets/Price Slider
+DB: master
+SharedFields:
+- ID: "0779d330-8f85-4c9c-92dc-762201c74cd4"
+  Hint: FacetSliderNumberOfSteps
+  Value: 10
+- ID: "282207b5-a710-418c-8517-f38a0349a395"
+  Hint: FacetField
+  Value: productlistprice
+- ID: "3559404c-8d85-40d0-8d7c-6bf6c73d35c9"
+  Hint: FacetSliderEnd
+  Value: 999
+- ID: "8afe9d42-11c0-4fbd-8422-3b3ab872d483"
+  Hint: FacetSliderGraphSteps
+  Value: 10
+- ID: "bc885cfb-fd9b-4fae-9487-73abbb9f4c1d"
+  Hint: FacetName
+  Value: Price
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo2779f204
+- ID: "d8029ec6-cf59-4592-8e1a-890ba198ad8d"
+  Hint: FacetSliderStart
+  Value: 0
+- ID: "ddab59ad-0361-4cce-9a41-7accf24eb568"
+  Hint: FacetSliderRange
+  Type: Checkbox
+  Value: 1
+- ID: "e0782fe1-0e12-4f5c-a3d1-8935f7e3f3a7"
+  Hint: FacetSliderDisplayGraph
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181004T180137Z
+    - ID: "419d6213-8864-42e7-ad99-dd9580fa8c71"
+      Hint: FacetTitle
+      Value: Price
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

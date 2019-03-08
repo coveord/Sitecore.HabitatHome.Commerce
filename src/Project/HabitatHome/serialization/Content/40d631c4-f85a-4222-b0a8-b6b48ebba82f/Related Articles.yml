@@ -1,0 +1,41 @@
+﻿---
+ID: "d5e11a74-17ae-40bd-a66a-77c36dc02b01"
+Parent: "40d631c4-f85a-4222-b0a8-b6b48ebba82f"
+Template: "31d0647b-578c-4457-a680-7f1b53762950"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Search Interfaces/Related Articles
+DB: master
+SharedFields:
+- ID: "11291c38-48b1-4dfb-83c6-ab68353bee39"
+  Hint: UseCurrentFilters
+  Type: Checkbox
+  Value: 0
+- ID: "2ddc6be7-085d-468b-896b-af450635d728"
+  Hint: EnableHistory
+  Value: 1
+- ID: "66f49d90-6e41-4290-9d6c-d8592867a968"
+  Hint: Main Search Interface
+  Value: "{29F0233B-F4E0-4860-8388-D17C9EBB129E}"
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: coveo19c404ae
+- ID: "fa626f96-a83c-4bec-a58d-7bbedb787b3d"
+  Hint: ResultsPerPage
+  Value: 5
+- ID: "fbcbca71-434a-469e-81fb-5fb47b97d2e6"
+  Hint: CustomCssClasses
+  Value: "related-article"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181004T191223Z
+    - ID: "44c09870-c12a-4605-9eeb-eb138238d4a6"
+      Hint: Title
+      Value: Related Articles
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin

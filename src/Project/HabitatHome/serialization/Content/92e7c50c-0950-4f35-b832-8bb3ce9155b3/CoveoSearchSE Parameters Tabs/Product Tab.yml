@@ -1,0 +1,43 @@
+﻿---
+ID: "e07d8a27-9ba8-4fc2-8e2a-61fc85bed14a"
+Parent: "5d969e5a-6f66-41b9-8566-f6060748cd58"
+Template: "75a4ffc2-2607-41a2-ab3c-992d8ae98dde"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Tabs/Product Tab
+DB: master
+SharedFields:
+- ID: "4eaa4851-dde1-47a5-a13d-b433533ff78a"
+  Hint: FilterExpressionRules
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule
+        uid="{D046562B-2BE0-440A-BFF9-42890C24A92E}">
+        <conditions>
+          <condition
+            id="{04D3C3C8-FF94-477A-BC2B-F17238CB239A}"
+            uid="676DDB387A6F47AF8BB37785599308B4"
+            templateid="{225F8638-2611-4841-9B89-19A5440A1DA1}" />
+        </conditions>
+      </rule>
+    </ruleset>
+- ID: "5ba24bd7-3a4a-4c6d-a39d-132f06b8cb25"
+  Hint: Layout
+  Value: "{C8AF1B72-A671-4761-87E4-6308F1299916}"
+- ID: "d48ad7e5-fd34-4ec2-b753-4e1867b05714"
+  Hint: ItemId
+  Value: tabProduct
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181003T001204Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
+    - ID: "646692a3-52a9-4dfa-bc75-305d91f6f05d"
+      Hint: TabCaption
+      Value: Products

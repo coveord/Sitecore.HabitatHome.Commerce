@@ -1,0 +1,34 @@
+﻿---
+ID: "d095735c-fc93-49b1-a77e-ea4830bae8b8"
+Parent: "b7585c3b-01c7-4f1f-b4a6-2eb70fc4a58e"
+Template: "27ca6d98-d7d5-4b59-9de6-5238ea05bf81"
+Path: /sitecore/content/Habitat Sites/Habitat Home/home/coveosearchse/CoveoSearchSE Parameters/CoveoSearchSE Parameters Scopes/Product Recommendation Filter
+DB: master
+SharedFields:
+- ID: "4eaa4851-dde1-47a5-a13d-b433533ff78a"
+  Hint: FilterExpressionRules
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule
+        uid="{355F9F00-4D52-48E1-A2E8-7F29F9D13410}">
+        <conditions>
+          <condition
+            id="{3BE9D05A-3D10-4137-ADBB-5A5F1B2F05F2}"
+            uid="C2D26F9B50704B358D992FD03021A776"
+            templateid="{225F8638-2611-4841-9B89-19A5440A1DA1}" />
+        </conditions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181004T212818Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\CoveoAdmin
