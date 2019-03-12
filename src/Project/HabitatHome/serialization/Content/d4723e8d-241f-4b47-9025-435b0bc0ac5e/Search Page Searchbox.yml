@@ -19,6 +19,9 @@ Languages:
     - ID: "4c8f3093-237e-4bb3-a658-c58710710234"
       Hint: PlaceholderText
       Value: "Looking for something?"
+    - ID: "5798999c-094c-496d-82a2-354007c895c8"
+      Hint: AdditionalDataAttributes
+      Value: triggerQueryOnClear=true
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
