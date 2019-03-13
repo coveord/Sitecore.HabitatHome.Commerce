@@ -93,7 +93,6 @@
     <Content Include="Scripts\Commerce\Feature\CoveoSearch\habitathome.feature.detailview.js" />
     <Content Include="Scripts\Commerce\Feature\CoveoSearch\habitathome.feature.detailview.model.js" />
     <Content Include="Styles\Commerce\Feature\CoveoSearch\habitathome.feature.coveosearch.css" />
-    <Content Include="Views\Commerce\CoveoSearch\Coveo Related Query Bound to Main Search Interface.cshtml" />
     <Content Include="App_Config\Include\Feature\Commerce\Feature.CoveoSearch.config" />
     <Content Include="Views\Commerce\CoveoSearch\DetailView.cshtml" />
     <None Include="web.Debug.config">
