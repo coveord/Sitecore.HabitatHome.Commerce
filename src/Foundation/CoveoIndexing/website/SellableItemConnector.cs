@@ -22,10 +22,11 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing
 
         public IEnumerable<JToken> GetSellableItems()
         {
-            var catalogItemIds = m_CatalogRepository.GetListItems(LIST_NAME,
-                                                                  LIST_NAME,
-                                                                  ENTITY_TYPE_NAME,
-                                                                  NUMBER_OF_ENTITIES_TO_TAKE);
+            var catalogItemIds = m_CatalogRepository.GetListItemSitecoreIds(LIST_NAME,
+                                                                            LIST_NAME,
+                                                                            ENTITY_TYPE_NAME,
+                                                                            NUMBER_OF_ENTITIES_TO_TAKE);
+
             foreach (string catalogItemId in catalogItemIds) {
                 yield return m_CatalogRepository.GetEntity(catalogItemId);
             }
