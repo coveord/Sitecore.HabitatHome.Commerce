@@ -85,7 +85,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.ComputedFields
             var putData = "{ \"itemIds\": [\"" + catalogName + "|" + productSku + "|\"] }";
             var data = Encoding.ASCII.GetBytes(putData);
 
-            var request = WebRequest.CreateHttp("https://localhost:5000/api/GetBulkPrices()");
+            var request = WebRequest.CreateHttp("https://habitathome.coveodemo.com:5000/api/GetBulkPrices()");
             request.ContentType = "application/json";
             request.Headers.Add("ShopName", "CommerceEngineDefaultStorefront");
             request.Headers.Add("ShopperId", "ShopperId");
@@ -106,7 +106,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.ComputedFields
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
             // Example 8.2.1:
             //{
-            //  "@odata.context":"https://localhost:5000/Api/$metadata#Collection(Sitecore.Commerce.Plugin.Catalog.SellableItemPricing)","value":[
+            //  "@odata.context":"https://habitathome.coveodemo.com:5000/Api/$metadata#Collection(Sitecore.Commerce.Plugin.Catalog.SellableItemPricing)","value":[
             //    {
             //      "Name":"Mens Axelion Running Shoe","Policies":[
 
@@ -131,7 +131,7 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.ComputedFields
 
             // Example 9.0.2:
             //{
-            //  "@odata.context":"https://localhost:5000/Api/$metadata#Collection(Sitecore.Commerce.Plugin.Catalog.SellableItemPricing)","value":[
+            //  "@odata.context":"https://habitathome.coveodemo.com:5000/Api/$metadata#Collection(Sitecore.Commerce.Plugin.Catalog.SellableItemPricing)","value":[
             //    {
             //      "Name":"Habitat Spectra 65\u201d 4K LED Ultra HD Television","Policies":[
 
@@ -165,11 +165,11 @@ namespace Sitecore.HabitatHome.Foundation.CoveoIndexing.ComputedFields
         private string GetToken()
         {
             string token = null;
-            string password = "b"; // "FLoWNGLeNeAT";
+            string password = "b";
             var postData = "password=" + password + "&grant_type=password&username=sitecore\\admin&client_id=postman-api&scope=openid EngineAPI postman_api";
             var data = Encoding.ASCII.GetBytes(postData);
 
-            var request = WebRequest.CreateHttp("https://localhost:5050/connect/token");
+            var request = WebRequest.CreateHttp("https://habitathome.coveodemo.com:5050/connect/token");
             request.ContentType = "application/x-www-form-urlencoded";
             request.Accept = "application/json";
             request.Method = "POST";
